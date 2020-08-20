@@ -14,6 +14,7 @@
     unarchive:
       src: "{{vars.openfoam_path}}/install/openfoam7_OL77_RDMA.tar"
       dest: "{{vars.openfoam_path}}/install/"
+      remote_src: yes
   - name: mkdir
     file:
       path: "{{vars.openfoam_path}}/work"
@@ -26,6 +27,7 @@
     unarchive:
       src: "{{vars.openfoam_path}}/work/motorbike_RDMA.tgz"
       dest: "{{vars.openfoam_path}}/work/"
+      remote_src: yes
 - hosts: compute
   tasks:
   - name: Add PATH line
