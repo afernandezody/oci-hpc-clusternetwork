@@ -20,7 +20,7 @@
       state: directory
   - name: wget benchmark
     get_url:
-      url: https://objectstorage.us-phoenix-1.oraclecloud.com/p/V7-M6bL-HWGKNLiZ2iCiKdG3ehzs3nkjwX6_zDNEbSM/n/hpc/b/HPC_BENCHMARKS/o/motorbike_RDMA.tgz
+      url: https://objectstorage.us-phoenix-1.oraclecloud.com/p/JnZ4PqxqrYVqoX5_3ErNJcHU6--KlkPUXUEamJSo3R8/n/hpc/b/HPC_BENCHMARKS/o/motorbike_RDMA.tgz
       dest: "{{vars.openfoam_path}}/work/motorbike_RDMA.tgz"
   - name: untar Openfoam
     unarchive:
