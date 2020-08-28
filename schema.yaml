@@ -261,7 +261,7 @@ variables:
   gluster_share:
     type: boolean
     description: "Configure Gluster share accessible on all nodes"
-    default: true
+    default: false
     title: "Install Gluster File System"
     required: false
 
