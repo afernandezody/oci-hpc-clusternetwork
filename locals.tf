@@ -1,10 +1,10 @@
 locals { 
 // display names of instances 
-  cluster_instances_ids = var.cluster_network ? data.oci_core_instance.cluster_network_instances.*.id : data.oci_core_instance.instance_pool_instances.*.id
-  cluster_instances_names = var.cluster_network ? data.oci_core_instance.cluster_network_instances.*.display_name : data.oci_core_instance.instance_pool_instances.*.display_name
+  cluster_instances_ids = var.cluster_network ? compact(data.oci_core_instance.cluster_network_instances.*.id) : compact(data.oci_core_instance.instance_pool_instances.*.id)
+  cluster_instances_names = var.cluster_network ? compact(data.oci_core_instance.cluster_network_instances.*.display_name) : compact(data.oci_core_instance.instance_pool_instances.*.display_name)
  
 // ips of the instances
-  cluster_instances_ips = var.cluster_network ? data.oci_core_instance.cluster_network_instances.*.private_ip : data.oci_core_instance.instance_pool_instances.*.private_ip
+  cluster_instances_ips = var.cluster_network ? compact(data.oci_core_instance.cluster_network_instances.*.private_ip) : compact(data.oci_core_instance.instance_pool_instances.*.private_ip)
 
 // subnet id derived either from created subnet or existing if specified
   subnet_id = var.use_existing_vcn ? var.private_subnet_id : element(concat(oci_core_subnet.private-subnet.*.id, [""]), 0)
