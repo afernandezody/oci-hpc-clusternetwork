@@ -27,15 +27,6 @@ variable "scratch_nfs_path" { default = "/nfs/scratch" }
 variable "vcn_compartment" { default = ""}
 variable "vcn_id" { default = ""}
 variable "use_existing_vcn" {}
-<<<<<<< Updated upstream
-variable "public_subnet_id" { default = ""}
-variable "private_subnet_id" { default = ""}
-variable "vcn_subnet" {}
-variable "public_subnet" {}
-variable "additional_subnet" {}
-variable "private_subnet" {}
-variable "ssh_cidr" {}
-=======
 variable "public_subnet_id" { default = "ocid.subnet.id"}
 variable "private_subnet_id" { default = "ocid.subnet.id"}
 variable "vcn_subnet" { default = "172.16.0.0/21" }
@@ -43,7 +34,6 @@ variable "public_subnet" { default = "172.16.0.0/24" }
 variable "additional_subnet" { default = "172.16.1.0/24" }
 variable "private_subnet" { default = "172.16.4.0/22" }
 variable "ssh_cidr" { default = "0.0.0.0/0" }
->>>>>>> Stashed changes
 variable "slurm" { default = false }
 variable "spack" { default = false } 
 variable "bastion_ocpus" { default = 2} 
